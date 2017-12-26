@@ -8,11 +8,10 @@ import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import injectTapEventPlugin from 'react-tap-event-plugin'
+// import { NavToggleButton } from '../styled/NavDrawer';
 
 
 injectTapEventPlugin();
-
-// import { NavToggleButton } from '../styled/NavDrawer';
 
 
 class RightIcon extends React.Component {
@@ -27,8 +26,16 @@ class RightIcon extends React.Component {
         targetOrigin={{horizontal: 'right', vertical: 'top'}}
         anchorOrigin={{horizontal: 'right', vertical: 'top'}}
       >
-        <MenuItem primaryText="Profile" />
-        <MenuItem primaryText="Sign out" />
+        <Link to={'/profile'}>
+          <MenuItem
+            primaryText="Profile"
+          />
+        </Link>
+        <Link to={'/logout'}>
+          <MenuItem
+            primaryText="Logout"
+          />
+        </Link>
       </IconMenu>
     );
   }
@@ -73,6 +80,12 @@ class NavDrawer extends React.Component {
             <MenuItem
               onTouchTap={this.handleToggle}
               primaryText={'About'}
+            />
+          </Link>
+          <Link to={'/products'}>
+            <MenuItem
+              onTouchTap={this.handleToggle}
+              primaryText={'Products'}
             />
           </Link>
           <Link to={'/careers'}>

@@ -31,9 +31,6 @@ class App extends React.Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <NavDrawer />
-        {/* <Main>
-          {this.props.children}
-        </Main> */}
         <Routes />
       </MuiThemeProvider>
     );
